@@ -1,0 +1,16 @@
+class Main {
+  async displayCountryDetails() {
+    const response = await fetch("https://restcountries.com/v3.1/all");
+    const countries = await response.json();
+    countries.forEach(country => {
+      console.log(`Name: ${country.name}`);
+      console.log(`Region: ${country.region}`);
+      console.log(`Sub-Region: ${country.subregion}`);
+      console.log(`Population: ${country.population}`);
+      console.log("");
+    });
+  }
+}
+
+const main = new Main();
+main.displayCountryDetails();
